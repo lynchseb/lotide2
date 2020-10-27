@@ -11,3 +11,16 @@ const eqArrays = function(array1, array2){
   return true;
   
 }
+
+const assertArraysEqual = function(arr1, arr2){
+  let equal = `✅✅✅Assertion Passed: ${arr1} === ${arr2}`;
+  let unequal = `🛑🛑🛑Assertion Failed: ${arr1} !== ${arr2}`;
+  if(eqArrays(arr1, arr2)){
+    return equal;
+  } else return unequal;
+}
+
+console.log(assertArraysEqual(['hi', 2, 3], ['hi', 2, 3])); // => true
+console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])); // => false
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", "3", "5"])); // => true
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", 3])); // => false
