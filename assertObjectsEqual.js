@@ -48,3 +48,4 @@ console.log(assertObjectsEqual({ b: "2", a: "1", d: "4"}, { d: "4", a: "1", b: "
 console.log(assertObjectsEqual({ b: "2", a: "1"}, { a: "1", b: "2", c: "3" }))
 console.log(assertObjectsEqual({ b: "2", a: "1"}, { a: "1", b: "2", c: "3" }))
 
+console.log(eqObjects({a:1,b:[1,2,3],c:{x:[1,2,3]}},{a:1,b:[1,2,3],c:{x:[1,2,3]}}));
