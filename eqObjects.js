@@ -24,7 +24,7 @@ const eqArrays = function(array1, array2) {
 
 const eqObjects = function(obj1, obj2) {
   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-    return "Out of balance, Thanos is coming";
+    return false;
   }
   //Extract keys from both objects and compares their lengths
   for (const [key, value] of Object.entries(obj1)) {
@@ -32,22 +32,22 @@ const eqObjects = function(obj1, obj2) {
     if (value.length > 1) {
   //Check if the value of a key is greater than 1 i.e. if its an array
       if (!eqArrays(value, obj2[key])) {
-        return "Out of balance, Thanos is coming";
+        return false;
       }
   //If the value is an array it sends that value, with the equivalent value from obj2 at the same key, to eqArrays to determine if the arrays are equal.
     } else if (value !== obj2[key]) {
-      return "Out of balance, Thanos is coming";
+      return false;
       }
   //If the value is not an array it is compared to the equivalent value from obj2 at the same key.    
   } 
   //Loop ends and therefore the objects are equivalent. 
-  return "Perfectly balanced, as all things should be";
+  return true;
 };
 
 
 console.log(eqObjects({ b: "2", a: "1"}, { a: "1", b: "2" }));
 console.log(eqObjects({ b: "2", a: "1", c: "3"}, { a: "1", b: "2" }));
 console.log(eqObjects({ d: ["2", 3], c: "1" }, { c: "1", d: ["2", 3] }));
-assertEqual(eqObjects({ b: "2", a: "1"}, { a: "1", b: "2" }), "Perfectly balanced, as all things should be");
-assertEqual(eqObjects({ b: "2", a: "1", c: "3"}, { a: "1", b: "2" }), "Out of balance, Thanos is coming");
-assertEqual(eqObjects({ b: "2", a: "1", c: "3"}, { a: "1", b: "2" }), "Perfectly balanced, as all things should be");
+assertEqual(eqObjects({ b: "2", a: "1"}, { a: "1", b: "2" }), true);
+assertEqual(eqObjects({ b: "2", a: "1", c: "3"}, { a: "1", b: "2" }), false);
+assertEqual(eqObjects({ b: "2", a: "1", c: "3"}, { a: "1", b: "2" }), true);
