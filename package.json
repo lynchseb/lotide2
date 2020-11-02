@@ -1,0 +1,26 @@
+{
+  "name": "lotide2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynchseb/lotide2.git"
+  },
+  "author": "Sebastian Lynch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lynchseb/lotide2/issues"
+  },
+  "homepage": "https://github.com/lynchseb/lotide2#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0"
+  }
+}
