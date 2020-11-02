@@ -31,11 +31,15 @@ const map = function(array, callback){
   return results;
 }
 
+module.exports = map;
 
-const results1 = map(words, word => word[0]);
 
-console.log(results1);
-console.log(eqArrays(results1, [ 'g', 'c', 't', 'm', 't' ]))
-console.log(eqArrays(results1, [ 'g', 'c', 't', 'm', 'f' ]))
-console.log(assertArraysEqual(eqArrays(results1, [ 'g', 'c', 't', 'm', 't' ]), true));
-console.log(assertArraysEqual(eqArrays(results1, [ 'g', 'c', 't', 'm', 'f' ]), false));
+// const results1 = map(words, word => word[0]);
+
+
+
+// console.log(results1);
+// console.log(eqArrays(results1, [ 'g', 'c', 't', 'm', 't' ]))
+// console.log(eqArrays(results1, [ 'g', 'c', 't', 'm', 'f' ]))
+// console.log(assertArraysEqual(eqArrays(results1, [ 'g', 'c', 't', 'm', 't' ]), true));
+// console.log(assertArraysEqual(eqArrays(results1, [ 'g', 'c', 't', 'm', 'f' ]), false));

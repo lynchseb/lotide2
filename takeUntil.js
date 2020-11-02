@@ -32,6 +32,8 @@ const takeUntil = function(array, callback){
     return result;
   }
 
+  module.exports = takeUntil;
+
 
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
