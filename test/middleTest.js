@@ -1,11 +1,19 @@
-const assertArraysEqual = require('../assertArraysEqual');
 const middle = require('../middle')
+const assert = require('chai').assert;
 
-const subThreeArray = [1, 2];
-const oddArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const evenArray = [1, 2, 3, 4, 5, 6, 7, 8];
+describe("#middle", () => {
+  it("returns empty array if array.length < 3", () => {
+    const result = middle([1, 2])
+    assert.deepEqual(middle([1, 2]), result);
+  });
 
-console.log(assertArraysEqual(middle(subThreeArray), []));
-console.log(assertArraysEqual(middle(oddArray), [5]));
-console.log(assertArraysEqual(middle(evenArray), [4, 5]));
-console.log(assertArraysEqual(middle(evenArray), [4, 5, 6]));
+  it("returns the middle index of an odd numbered array.length", () => {
+    const result = middle([1, 2, 3, 4, 5])
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), result); 
+  });
+
+  it("returns the middle two indexes of an even numbered array.length", () => {
+    const result = middle([1, 2, 3, 4, 5, 6])
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), result);
+  });
+});

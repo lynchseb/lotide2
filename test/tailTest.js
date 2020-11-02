@@ -1,6 +1,15 @@
 const tail = require('../tail')
+const assert = require('chai').assert;
 
+describe("#tail", () => {
+  it("removes index 0 and returns remainder of array", () => {
+    const result = tail(['Hello', 'Lighthouse', 'Labs'])
+    assert.deepEqual(tail(['Hello', 'Lighthouse', 'Labs']), result);
+  });
 
-console.log(tail(["Yo Yo", "Lighthouse", "Labs"])); // test using an array with values
-console.log(tail([])); // test using an empty array
-console.log(tail(["hello"])); // test using an array with 1 value
+  it("returns undefined for an empty []", () => {
+    const result = tail([])
+    assert.deepEqual(tail([]), result); 
+  });
+});
+
